@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Issuer Dashboard - CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="dashboard">
+
+  
+  <div class="nav">
+    <div class="container">
+      <div class="brand">CertiVerify</div>
+      <div>
+        <a href="index.html">Verify</a>
+        <a href="issuer-dashboard.html">Issuer</a>
+        <a href="create-certificate.html">Create</a>
+        <a href="admin.html">Admin</a>
+        <a class="register-link" href="register.html">Register</a>
+        <a class="login-btn" href="login.html">Login</a>
+        <a class="login-btn logout-btn" href="#" onclick="logout(); window.location.href='login.html'; return false;" style="display:none">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+
+<div class="hero">
+  <h1>Issuer Dashboard</h1>
+  <p class="lead">Overview of your issued certificates and quick stats.</p>
+</div>
+<div class="grid cards-3">
+  <div class="card kpi"><span class="dot success"></span><div><div class="small">Valid Certificates</div><div id="kpi-valid" style="font-size:22px;font-weight:800">0</div></div></div>
+  <div class="card kpi"><span class="dot danger"></span><div><div class="small">Revoked Certificates</div><div id="kpi-revoked" style="font-size:22px;font-weight:800">0</div></div></div>
+  <div class="card kpi"><span class="dot warn"></span><div><div class="small">Pending Requests</div><div style="font-size:22px;font-weight:800">0</div></div></div>
+</div>
+<div class="section card">
+  <div style="display:flex;align-items:center;justify-content:space-between">
+    <h2>Recent Certificates</h2>
+    <a class="btn" href="create-certificate.html">+ New Certificate</a>
+  </div>
+  <div class="table-wrap">
+    <table class="table">
+      <thead><tr><th>Student ID</th><th>Student</th><th>Program</th><th>Date</th><th>Status</th><th>Hash</th><th>Action</th></tr></thead>
+      <tbody id="tb-cert"></tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

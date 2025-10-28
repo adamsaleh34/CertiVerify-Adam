@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Register - CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="register">
+
+  <div class="nav">
+    <div class="container">
+      <div class="brand">CertiVerify</div>
+      <div>
+        <a href="index.html">Verify</a>
+        <a href="issuer-dashboard.html">Issuer</a>
+        <a href="create-certificate.html">Create</a>
+        <a href="admin.html">Admin</a>
+        <a class="register-link" href="register.html">Register</a>
+        <a class="login-btn" href="login.html">Login</a>
+        <a class="login-btn logout-btn" href="#" onclick="logout(); window.location.href='login.html'; return false;" style="display:none">Logout</a>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+
+<div class="hero">
+  <h1>Create Your Account</h1>
+  <p class="lead">Sign up as an issuer to start generating verifiable certificates. This is a demo-only registration.</p>
+</div>
+<div class="card" style="max-width:520px;margin:auto">
+  <form id="register-form" class="grid" style="gap:16px">
+    <div class="row">
+      <div><label>Full Name</label><input class="input" name="name" required placeholder="Adam Eyad Saleh"/></div>
+      <div><label>Organization</label><input class="input" name="org" required placeholder="Islamic University of Gaza"/></div>
+    </div>
+    <div class="row">
+      <div><label>Email</label><input class="input" name="email" type="email" required placeholder="you@example.com"/></div>
+      <div><label>Password</label><input class="input" name="password" type="password" required placeholder="********"/></div>
+    </div>
+    <div><label>Role</label>
+      <select class="input" name="role">
+        <option value="issuer">Issuer</option>
+        <option value="verifier">Verifier</option>
+      </select>
+    </div>
+    <div><button class="btn" style="width:100%">Create Account</button></div>
+    <p class="small">On success, you will be redirected to the Issuer Dashboard.</p>
+  </form>
+</div>
+<script>
+  document.querySelector('#register-form').addEventListener('submit', (e)=>{
+    e.preventDefault();
+    // Store minimal profile in localStorage for demo
+    const fd = new FormData(e.target);
+    const profile = Object.fromEntries(fd.entries());
+    localStorage.setItem('cvp_profile', JSON.stringify(profile));
+    login(); // mark as logged in
+    window.location.href = 'issuer-dashboard.html';
+  });
+</script>
+
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

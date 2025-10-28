@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Login - CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="login">
+
+  
+  <div class="nav">
+    <div class="container">
+      <div class="brand">CertiVerify</div>
+      <div>
+        <a href="index.html">Verify</a>
+        <a href="issuer-dashboard.html">Issuer</a>
+        <a href="create-certificate.html">Create</a>
+        <a href="admin.html">Admin</a>
+        <a class="register-link" href="register.html">Register</a>
+        <a class="login-btn" href="login.html">Login</a>
+        <a class="login-btn logout-btn" href="#" onclick="logout(); window.location.href='login.html'; return false;" style="display:none">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+
+<div class="hero">
+  <h1>Login to CertiVerify</h1>
+  <p class="lead">This is a mock login screen for demonstration only (no backend authentication required).</p>
+</div>
+<div class="card" style="max-width:420px;margin:auto">
+  <form id="login-form" class="grid" style="gap:16px">
+    <div>
+      <label>Email</label>
+      <input class="input" type="email" required placeholder="you@example.com"/>
+    </div>
+    <div>
+      <label>Password</label>
+      <input class="input" type="password" required placeholder="••••••••"/>
+    </div>
+    <div><button class="btn" style="width:100%">Login</button></div>
+    <p class="small">For demo purposes, any credentials will allow access to the Issuer Dashboard.</p>
+  </form>
+</div>
+<script>
+  document.querySelector('#login-form').addEventListener('submit', e=>{
+    e.preventDefault();
+    login(); window.location.href = 'issuer-dashboard.html';
+  });
+</script>
+
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

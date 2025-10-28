@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Verify — CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.11.1/dist/ethers.umd.min.js"></script><script>window.CERTI={ADDR:"0x277171c241719944f493029C7f7AAAec59C2A062",ABI:[{"inputs": [], "stateMutability": "nonpayable", "type": "constructor"}, {"anonymous": false, "inputs": [{"indexed": true, "internalType": "bytes32", "name": "hash", "type": "bytes32"}, {"indexed": true, "internalType": "address", "name": "issuer", "type": "address"}, {"indexed": false, "internalType": "string", "name": "studentId", "type": "string"}, {"indexed": false, "internalType": "string", "name": "program", "type": "string"}, {"indexed": false, "internalType": "string", "name": "uri", "type": "string"}], "name": "Issued", "type": "event"}, {"anonymous": false, "inputs": [{"indexed": true, "internalType": "address", "name": "who", "type": "address"}, {"indexed": false, "internalType": "bool", "name": "allowed", "type": "bool"}], "name": "IssuerUpdated", "type": "event"}, {"anonymous": false, "inputs": [{"indexed": true, "internalType": "bytes32", "name": "hash", "type": "bytes32"}, {"indexed": true, "internalType": "address", "name": "issuer", "type": "address"}], "name": "Revoked", "type": "event"}, {"inputs": [{"internalType": "bytes32", "name": "hash", "type": "bytes32"}], "name": "getStatus", "outputs": [{"internalType": "uint8", "name": "", "type": "uint8"}], "stateMutability": "view", "type": "function"}, {"inputs": [{"internalType": "address", "name": "", "type": "address"}], "name": "isIssuer", "outputs": [{"internalType": "bool", "name": "", "type": "bool"}], "stateMutability": "view", "type": "function"}, {"inputs": [{"internalType": "bytes32", "name": "hash", "type": "bytes32"}, {"internalType": "string", "name": "studentId", "type": "string"}, {"internalType": "string", "name": "program", "type": "string"}, {"internalType": "string", "name": "uri", "type": "string"}], "name": "issue", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "name": "owner", "outputs": [{"internalType": "address", "name": "", "type": "address"}], "stateMutability": "view", "type": "function"}, {"inputs": [{"internalType": "bytes32", "name": "hash", "type": "bytes32"}], "name": "revoke", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [{"internalType": "address", "name": "who", "type": "address"}, {"internalType": "bool", "name": "allowed", "type": "bool"}], "name": "setIssuer", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [{"internalType": "address", "name": "newOwner", "type": "address"}], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function"}, {"inputs": [{"internalType": "bytes32", "name": "hash", "type": "bytes32"}], "name": "verify", "outputs": [{"internalType": "bool", "name": "found", "type": "bool"}, {"internalType": "bool", "name": "valid", "type": "bool"}, {"internalType": "address", "name": "issuer", "type": "address"}, {"internalType": "string", "name": "studentId", "type": "string"}, {"internalType": "string", "name": "program", "type": "string"}, {"internalType": "uint256", "name": "issuedAt", "type": "uint256"}, {"internalType": "string", "name": "uri", "type": "string"}], "stateMutability": "view", "type": "function"}]};</script><script defer src="js/auth.js"></script><script defer src="js/contract.js"></script>
+</head><body>
+<div class="nav"><div class="wrap">
+  <div class="brand">CertiVerify</div>
+  <div>
+    <a href="index.html">Verify</a>
+    <a href="create.html">Create</a>
+    <a href="certificate.html">Certificate</a>
+    <a href="admin.html">Admin</a>
+    <a href="login.html" id="loginLink">Login</a>
+    <a href="register.html" id="registerLink">Register</a>
+    <span id="userArea" style="display:none"></span>
+    <button id="logoutBtn" class="logout" style="display:none">Logout</button>
+    <button id="connectWallet">Connect Wallet</button>
+  </div>
+</div></div>
+<div class="page">
+<h1>Verify Certificate</h1>
+<p class="small">Enter a certificate hash to check its authenticity on-chain.</p>
+<div class="card">
+  <label for="vhash">Certificate Hash (bytes32)</label>
+  <input id="vhash" class="input" placeholder="0x... 64 hex"/>
+  <div style="margin-top:12px">
+    <button id="verifyBtn" class="btn">Verify on Chain</button>
+    <span id="walletAddr" class="small" style="margin-left:10px"></span>
+  </div>
+  <div id="vres" style="margin-top:14px"></div>
+</div>
+</div>
+<footer>© 2025 CertiVerify • Blockchain Certificate Verification</footer>
+</body></html>

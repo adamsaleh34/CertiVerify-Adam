@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Create Certificate - CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="create">
+
+  
+  <div class="nav">
+    <div class="container">
+      <div class="brand">CertiVerify</div>
+      <div>
+        <a href="index.html">Verify</a>
+        <a href="issuer-dashboard.html">Issuer</a>
+        <a href="create-certificate.html">Create</a>
+        <a href="admin.html">Admin</a>
+        <a class="register-link" href="register.html">Register</a>
+        <a class="login-btn" href="login.html">Login</a>
+        <a class="login-btn logout-btn" href="#" onclick="logout(); window.location.href='login.html'; return false;" style="display:none">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+
+<div class="hero">
+  <h1>Create Certificate</h1>
+  <p class="lead">Generate verified digital certificates effortlessly. Upload your document, let our system hash it with SHA-256, and publish it securely to the blockchain.</p>
+</div>
+<div class="grid" style="grid-template-columns:2fr 1.2fr;gap:22px">
+  <div class="card">
+    <form id="create-form" class="grid">
+      <div class="row">
+        <div><label>Student Name *</label><input class="input" name="studentName" required/></div>
+        <div><label>Student ID *</label><input class="input" name="studentId" required/></div>
+      </div>
+      <div class="row">
+        <div><label>Program *</label><input class="input" name="program" required/></div>
+        <div><label>Issue Date</label><input class="input" name="issueDate" type="date"/></div>
+      </div>
+      <div>
+        <label>Upload Certificate (PDF) optional</label>
+        <input type="file" class="input" name="pdf" accept=".pdf"/>
+      </div>
+      <div><button class="btn">Publish (Demo)</button></div>
+      <p class="small">No backend required. Records are stored in browser localStorage.</p>
+    </form>
+  </div>
+  <div id="create-result"></div>
+</div>
+
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

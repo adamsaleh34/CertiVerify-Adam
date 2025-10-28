@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Admin - CertiVerify</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head>
+<body data-page="">
+
+  
+  <div class="nav">
+    <div class="container">
+      <div class="brand">CertiVerify</div>
+      <div>
+        <a href="index.html">Verify</a>
+        <a href="issuer-dashboard.html">Issuer</a>
+        <a href="create-certificate.html">Create</a>
+        <a href="admin.html">Admin</a>
+        <a class="register-link" href="register.html">Register</a>
+        <a class="login-btn" href="login.html">Login</a>
+        <a class="login-btn logout-btn" href="#" onclick="logout(); window.location.href='login.html'; return false;" style="display:none">Logout</a>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+
+<div class="hero">
+  <h1>Admin Overview (Demo)</h1>
+  <p class="lead">Read-only summary for Phase II demo. Extendable with real backend later.</p>
+</div>
+<div class="grid cards-3">
+  <div class="card"><h2>Total Certificates</h2><div class="small">valid + revoked</div><div id="ad-total" style="font-size:22px;font-weight:800">0</div></div>
+  <div class="card"><h2>Valid</h2><div id="ad-valid" style="font-size:22px;font-weight:800">0</div></div>
+  <div class="card"><h2>Revoked</h2><div id="ad-revoked" style="font-size:22px;font-weight:800">0</div></div>
+</div>
+<div class="section card">
+  <h2>Data Preview</h2>
+  <pre id="ad-json" class="small" style="white-space:pre-wrap"></pre>
+</div>
+<script>
+  const list = (JSON.parse(localStorage.getItem('cvp_certificates_v1'))||[]);
+  document.getElementById('ad-total').textContent = list.length;
+  document.getElementById('ad-valid').textContent = list.filter(x=>x.status==='Valid').length;
+  document.getElementById('ad-revoked').textContent = list.filter(x=>x.status==='Revoked').length;
+  document.getElementById('ad-json').textContent = JSON.stringify(list, null, 2);
+</script>
+
+</div>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
