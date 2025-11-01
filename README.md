@@ -17,5 +17,5 @@ CertiVerify is a blockchain-based web platform that allows universities to issue
 - Front-end interface for creating and verifying certificates  
 
 ## 🔗 Useful Links
-https://youtu.be/9jJCsibpJ6k
+https://youtu.be/3_YJt4dzFXQ
 ****
